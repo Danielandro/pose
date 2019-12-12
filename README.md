@@ -1,4 +1,4 @@
-<h1 align="center">Pose :camera: :smiley:</h1>
+<h1 align="center">:camera: Pose :smiley:</h1>
 <p>
   <img src="https://img.shields.io/badge/npm-v6.9.0-blue" />
 
