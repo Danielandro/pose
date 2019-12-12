@@ -24,9 +24,37 @@ Build an Instagram clone Web app. Users will need to be able to post **pictures*
 - Node.js (Back-End)
 - Express (API)
 
-
 ## User stories
 
+```
+As a user
+So that I can look at pictures
+I would like to sign up for an account
+```
+
+```
+As a user
+So that I only need to sign up once
+I would like to login with my existing account
+```
+
+```
+As a user
+So that I can share pictures
+I would like to post pictures
+```
+
+```
+As a user
+So that I can share my opinion on pictures
+I would like to post comments on pictures
+```
+
+```look at pictureslook at pictures
+As a user
+So that I can share my appreciation
+I would like to like a users pictures
+```
 
 ## Install
 
