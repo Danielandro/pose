@@ -16,13 +16,17 @@
 
 ## Aim
 
-Build an web app Instagram clone
+Build an Instagram clone Web app. Users will need to be able to post **pictures**, write **comments** on pictures and **like** a picture
 
 ## Tech Stack
 
 - React (Front-End)
 - Node.js (Back-End)
 - Express (API)
+
+
+## User stories
+
 
 ## Install
 
