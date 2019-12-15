@@ -4,6 +4,10 @@
   "description": "<h1 align=\"center\">:camera: Pose :smiley:</h1> <p>   <img src=\"https://img.shields.io/badge/npm-v6.9.0-blue\" />",
   "main": "index.js",
   "scripts": {
+    "client": "npm run start --prefix client",
+    "server": "nodemon index.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
