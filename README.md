@@ -26,11 +26,15 @@ Build an Instagram clone Web app. Users will need to be able to post **pictures*
 
 ## User stories
 
+**In progress**
+
 ```
 As a user
 So that I can look at pictures
 I would like to sign up for an account
 ```
+
+**To Do**
 
 ```
 As a user
