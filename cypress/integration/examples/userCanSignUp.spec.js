@@ -9,27 +9,27 @@ describe('Signing up', () => {
     it('user fills in form & signs up', () => {
       cy.visit('http://localhost:3000')
       cy.get('.signup-form')
-        .find('[value="firstName"]')
+        .find('#firstName')
         .type('Bram').should('have.value', 'Bram')
 
       cy.get('.signup-form')
-        .find('[value="lastName"]')
+        .find('#lastName')
         .type('Stoker').should('have.value', 'Stoker')
 
       cy.get('.signup-form')
-        .find('[value="email"]')
+        .find('#email')
         .type('myemail@mail.com').should('have.value', 'myemail@mail.com')
 
       cy.get('.signup-form')
-        .find('[value="password"]')
+        .find('#password')
         .type('123456').should('have.value', '123456')
 
       cy.get('.signup-form')
-        .find('[value="password-confirmation"]')
+        .find('#password-confirmation')
         .type('123456').should('have.value', '123456')
 
       cy.get('.signup-form').submit()
-        .next().should('contain', 'Your form has been submitted!')
+        .next().should('contain', 'Successfully signed up!')
     })
   })
 })
