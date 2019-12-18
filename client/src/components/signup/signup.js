@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 const Signup = () => {
+  const [userDetails, setUserDetails] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    passwordConfirmation: ''
+  })
+
   const handleChange = (e) => {
-    console.log(e.target.value)
+    const newValue = e.target.value
+    setUserDetails({
+      ...userDetails,
+      [e.target.name]: newValue
+    })
   }
 
   return (
@@ -12,9 +24,10 @@ const Signup = () => {
       <label htmlFor="firstName">First Name</label>
       <input
         type="text"
-        value="firstName"
+        value={userDetails.firstName}
         placeholder="First Name"
         onChange={handleChange}
+        name="firstName"
         id="firstName"
         required
       /><br />
@@ -22,9 +35,10 @@ const Signup = () => {
       <label htmlFor="lastName">Last Name</label>
       <input
         type="text"
-        value="lastName"
+        value={userDetails.lastName}
         placeholder="Last Name"
         onChange={handleChange}
+        name="lastName"
         id="lastName"
         required
       /><br />
@@ -32,9 +46,10 @@ const Signup = () => {
       <label htmlFor="email">Email</label>
       <input
         type="email"
-        value="email"
+        value={userDetails.email}
         placeholder="Email"
         onChange={handleChange}
+        name="email"
         id="email"
         required
       /><br />
@@ -42,9 +57,10 @@ const Signup = () => {
       <label htmlFor="password">Password</label>
       <input
         type="password"
-        value="password"
+        value={userDetails.password}
         placeholder="Password"
         onChange={handleChange}
+        name="password"
         id="password"
         required
       /><br />
@@ -52,11 +68,18 @@ const Signup = () => {
       <label htmlFor="password-confirmation">Confirm Password</label>
       <input
         type="password"
-        value="password-confirmation"
-        placeholder="password-confirmation"
+        value={userDetails.passwordConfirmation}
+        placeholder="Confirm Password"
         onChange={handleChange}
+        name="password-confirmation"
         id="password-confirmation"
         required
+      /><br />
+      {/* Submit button */}
+      <input
+        type="submit"
+        value="Signup"
+        name="submit"
       /><br />
     </form>
   )
