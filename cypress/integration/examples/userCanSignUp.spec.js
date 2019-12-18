@@ -23,7 +23,13 @@ describe('Signing up', () => {
       cy.get('.signup-form')
         .find('[value="password"]')
         .type('123456').should('have.value', '123456')
-    })
 
+      cy.get('.signup-form')
+        .find('[value="password-confirmation"]')
+        .type('123456').should('have.value', '123456')
+
+      cy.get('.signup-form').submit()
+        .next().should('contain', 'Your form has been submitted!')
+    })
   })
 })
