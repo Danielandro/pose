@@ -25,7 +25,7 @@ describe('Signing up', () => {
         .type('123456').should('have.value', '123456')
 
       cy.get('.signup-form')
-        .find('#password-confirmation')
+        .find('#passwordConfirmation')
         .type('123456').should('have.value', '123456')
 
       cy.get('.signup-form').submit()

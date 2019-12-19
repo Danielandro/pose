@@ -11,15 +11,26 @@ const Signup = () => {
   })
 
   const handleChange = (e) => {
-    const newValue = e.target.value
+    const credential = e.target.name
+    const value = e.target.value
+
     setUserDetails({
       ...userDetails,
-      [e.target.name]: newValue
+      [credential]: value
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    fetch('/signup', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: { ...userDetails }
     })
   }
 
   return (
-    <form className="signup-form">
+    <form className="signup-form" onSubmit={handleSubmit}>
       {/* First Name */}
       <label htmlFor="firstName">First Name</label>
       <input
@@ -65,14 +76,14 @@ const Signup = () => {
         required
       /><br />
       {/* Password Confirmation */}
-      <label htmlFor="password-confirmation">Confirm Password</label>
+      <label htmlFor="passwordConfirmation">Confirm Password</label>
       <input
         type="password"
         value={userDetails.passwordConfirmation}
         placeholder="Confirm Password"
         onChange={handleChange}
-        name="password-confirmation"
-        id="password-confirmation"
+        name="passwordConfirmation"
+        id="passwordConfirmation"
         required
       /><br />
       {/* Submit button */}
