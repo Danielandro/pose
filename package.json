@@ -8,7 +8,7 @@
     "server": "nodemon index.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "start": "node index.js",
-    "test": "jest",
+    "test": "jest --coverage --verbose --watchAll=false ./spec",
     "cypress:open": "cypress open"
   },
   "repository": {
@@ -24,12 +24,30 @@
   "homepage": "https://github.com/Danielandro/pose#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^7.15.1"
   },
   "devDependencies": {
     "concurrently": "^5.0.1",
     "cypress": "^3.8.0",
     "jest": "^24.9.0",
     "nodemon": "^2.0.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "models/*.{js,jsx,ts,tsx}",
+      "routes/*.{js,jsx,ts,tsx}",
+      "!src/index.js",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/path/to/dir/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
   }
 }
